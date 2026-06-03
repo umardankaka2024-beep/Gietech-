@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GieTech Kano</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#111827;
+padding:15px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#00d4ff;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 12px;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.hero p{
+margin-top:15px;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#00d4ff;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+section{
+padding:80px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:35px;
+margin-bottom:40px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.updates{
+display:grid;
+gap:20px;
+}
+
+.update-card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+background:#111827;
+padding:20px;
+text-align:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.login-btn{
+background:#00d4ff;
+border:none;
+padding:10px 20px;
+border-radius:25px;
+cursor:pointer;
+}
+
+.modal{
+display:none;
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+top:0;
+left:0;
+justify-content:center;
+align-items:center;
+}
+
+.login-box{
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:20px;
+width:320px;
+}
+
+.login-box h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.login-box input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+}
+
+.login-box button{
+width:100%;
+padding:12px;
+background:#00d4ff;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">GieTech Kano</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#updates">Updates</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button class="login-btn" onclick="openLogin()">Admin</button>
+</header>
+
+<section class="hero" id="home">
+<div>
+<h1>GieTech Kano</h1>
+<p>Technology • IoT • Embedded Systems • Training</p>
+<a href="#services" class="btn">Our Services</a>
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Us</h2>
+<p>
+GieTech Kano provides professional technology solutions,
+embedded systems training, IoT development,
+web development, mobile applications,
+electrical installation, CCTV installation,
+and computer training.
+</p>
+</section>
+
+<section id="services">
+<h2 class="section-title">Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>IoT Development</h3>
+<p>Smart systems and automation solutions.</p>
+</div>
+
+<div class="card">
+<h3>Embedded Systems</h3>
+<p>Arduino, ESP32, STM32 and microcontroller projects.</p>
+</div>
+
+<div class="card">
+<h3>Website Development</h3>
+<p>Professional websites and web applications.</p>
+</div>
+
+<div class="card">
+<h3>Mobile Apps</h3>
+<p>Android and cross-platform development.</p>
+</div>
+
+<div class="card">
+<h3>Electrical Installation</h3>
+<p>Residential and industrial electrical solutions.</p>
+</div>
+
+<div class="card">
+<h3>CCTV Installation</h3>
+<p>Security camera installation and maintenance.</p>
+</div>
+
+<div class="card">
+<h3>Computer Training</h3>
+<p>Professional ICT and engineering training.</p>
+</div>
+
+</div>
+</section>
+
+<section id="updates">
+<h2 class="section-title">Latest Updates</h2>
+
+<div class="updates" id="updatesContainer">
+
+<div class="update-card">
+<h3>Welcome to GieTech</h3>
+<p>Latest company news and updates will appear here.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2 class="section-title">Contact Us</h2>
+
+<p>📧 umardankaka2024@gmail.com</p>
+<p>📱 +2348103391740</p>
+
+<br>
+
+<a class="btn"
+href="mailto:umardankaka2024@gmail.com">
+Send Email
+</a>
+
+</section>
+
+<footer>
+© 2026 GieTech Kano. All Rights Reserved.
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/2348103391740?text=Hello%20GieTech%20Kano"
+target="_blank">
+WhatsApp
+</a>
+
+<div class="modal" id="loginModal">
+<div class="login-box">
+
+<h2>Admin Login</h2>
+
+<input type="text" id="username" placeholder="Username">
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+</div>
+
+<script>
+function openLogin(){
+document.getElementById("loginModal").style.display="flex";
+}
+
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+if(user==="admin" && pass==="12345"){
+alert("Login Successful");
+window.location.href="dashboard.html";
+}else{
+alert("Invalid Username or Password");
+}
+}
+</script>
+
+</body>
+</html>
