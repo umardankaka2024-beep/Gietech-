@@ -587,6 +587,10 @@ function deleteUpdate(btn){
 function sendWhatsApp(){
 
     let msg = document.getElementById('waMsg').value;
+    if(!msg){
+        alert("please type a message before sending");
+        return;
+    }
 
     let phone = '2348103391740';
 
